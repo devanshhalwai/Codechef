@@ -5,7 +5,7 @@ int main()
 {
     long long int t;
     cin>>t;
-    while(t--)
+    while(t)
     {
         int n,p,fail=0,i;
         cin>>n>>p;

@@ -1,3 +1,4 @@
+//https://www.codechef.com/problems/HRDSEQ
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> arr(129);

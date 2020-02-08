@@ -9,25 +9,24 @@ int main()
 {
     int num;
     cin >> num;
-    while(num--){
-        int subTests;
-        cin >> subTests;
+    while(num--)
+    {
+        int n;
+        cin >>n;
         int counter = 0;
         map<string,pair<int,int>> inputs;
-        while(subTests--){
+        while(n--)
+        {
             string name;
             int value;
-            cin >> name >> value;
-            if(value == 1){
+            cin>>name>>value;
+            if(value==1)
                 inputs[name].first++;
-            }else{
+            else
                 inputs[name].second++;
-            }
         }
-        
-        for(auto i = inputs.begin() ; i != inputs.end() ; i++){
+        for(auto i = inputs.begin() ; i != inputs.end() ; i++)
                 counter+=max(i->second.first,i->second.second);
-        }
         cout << counter << endl;
     }
     return 0;

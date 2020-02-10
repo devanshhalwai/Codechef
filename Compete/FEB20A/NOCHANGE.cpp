@@ -47,7 +47,6 @@ void process(long long int D[],long long int n,long long int p)
     }
     cout<<"NO\n";
 }
-
 int main()
 {
     ios_base::sync_with_stdio(false);

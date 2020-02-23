@@ -25,7 +25,7 @@ int main ()
     cin>>t;
     while(t--)
     {
-        long long int n,m,temp,x1,y1,x2,y2,ans=0;
+        long long int n,m,temp,x1,y1,x2,y2,x3,y3,ans=0;
         bool flag=false;
         cin>>n>>m;
         vector<long long int> x_pos;
@@ -65,8 +65,12 @@ int main ()
                 x2=0;
                 y2=y_pos[j];
                 long double yPoint = (long double)(x1*x1*-1.0)/y2;
+                x3=0;
                 if(yPoint == (int)yPoint && binarySearch(y_neg,0,y_neg.size()-1,(int)yPoint)!=-1)
-                    ans++;
+                {
+                        cout<<"x1: "<<x1<<" y1: "<<y1<<" x2: "<<x2<<" y2: "<<y2<<" x3: "<<x3<<" y3: "<<yPoint<<"\n";
+                        ans++;
+                }
             }
         }
         for(long long int i=0;i<x_neg.size();i++)
@@ -78,8 +82,12 @@ int main ()
                 x2=0;
                 y2=y_pos[j];
                 long double yPoint = (long double)(x1*x1*-1.0)/y2;
+                x3=0;
                 if(yPoint == (int)yPoint && binarySearch(y_neg,0,y_neg.size()-1,(int)yPoint)!=-1)
-                    ans++;
+                {
+                        cout<<"x1: "<<x1<<" y1: "<<y1<<" x2: "<<x2<<" y2: "<<y2<<" x3: "<<x3<<" y3: "<<yPoint<<"\n";
+                        ans++;
+                }
             }
         }
         for(long long int i=0;i<y_pos.size();i++)
@@ -91,8 +99,12 @@ int main ()
                 x2=x_pos[j];
                 y2=0;
                 long double xPoint = (long double)(y1*y1*-1.0)/x2;
+                y3=0;
                 if(xPoint == (int)xPoint && binarySearch(x_neg,0,x_neg.size()-1,(int)xPoint)!=-1)
-                    ans++;
+                {
+                        cout<<"x1: "<<x1<<" y1: "<<y1<<" x2: "<<x2<<" y2: "<<y2<<" x3: "<<xPoint<<" y3: "<<y3<<"\n";
+                        ans++;
+                }
             }
         }
         for(long long int i=0;i<y_neg.size();i++)
@@ -104,8 +116,12 @@ int main ()
                 x2=x_pos[j];
                 y2=0;
                 long double xPoint = (long double)(y1*y1*-1.0)/x2;
+                y3=0;
                 if(xPoint == (int)xPoint && binarySearch(x_neg,0,x_neg.size()-1,(int)xPoint)!=-1)
-                    ans++;
+                {
+                        cout<<"x1: "<<x1<<" y1: "<<y1<<" x2: "<<x2<<" y2: "<<y2<<" x3: "<<xPoint<<" y3: "<<y3<<"\n";
+                        ans++;
+                }
             }
         }
         if(flag==true)

@@ -1,3 +1,4 @@
+//https://www.codechef.com/COOK118A/problems/CROADS
 #include <iostream>
 #include <bits/stdc++.h>
 #include <algorithm>
@@ -58,15 +59,47 @@ ll XOR1toN(const ll n)
     } 
 } 
 //----------------------------END OF TEMPLATE---------------------------------//
-
 int main() 
 {
-	ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
     ll t;
     cin>>t;
     while(t--)
     {
-        //your code goes here
+        ll n,i,j,cnt=0,sum=0,temp;
+		cin>>n;
+		ll val=log2(n);
+		if((1ll<<val)==n){
+			cout<<-1<<endl;
+			continue;
+		}
+		ll cur=n;
+		if(cur%2==1){
+			sum=cur/2;
+			cur=cur-1-cur/2;
+		}
+		else{
+			sum=cur/2-1;
+			cur=cur/2;
+		}
+		for(i=1;i<=42;i++)
+		{
+			if(cur<=0)
+				break;
+			if(cur%2==1){
+				temp=cur/2+1;
+				cur=cur-temp;
+				sum+=(1ll<<i)*temp;
+			}
+			else{
+				temp=cur/2;
+				cur=cur-temp;
+				sum+=(1ll<<i)*temp;
+			}
+		}
+		cout<<sum<<endl;
     }
 	return 0;
 }

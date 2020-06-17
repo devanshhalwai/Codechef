@@ -1,0 +1,38 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++ build active file",
+            "command": "/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/bin"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "cpp build active file",
+            "command": "/bin/cpp",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-std=c++17",
+                "-Wshadow",
+                "-Wall",
+                "-O2",
+                "-Wno-unused-result"
+            ],
+            "options": {
+                "cwd": "/bin"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
